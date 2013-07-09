@@ -17,3 +17,9 @@ nginx启动，重启，关闭命令
 	kill -TERM 主进程号
 强制停止Nginx：
 	pkill -9 nginx
+
+
+usful site :
+
+http://snowolf.iteye.com/blog/1539932
+
