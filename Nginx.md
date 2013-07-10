@@ -21,6 +21,7 @@ nginx启动，重启，关闭命令
 	pkill -9 nginx
 
 
+
 usful site :
 
 http://snowolf.iteye.com/blog/1539932
