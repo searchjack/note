@@ -1,7 +1,10 @@
-<<<<<<< HEAD
-终止MySQL
+#终止MySQL
     [root@west228 etc]# mysql --version
     mysql  Ver 14.14 Distrib 5.1.61, for unknown-linux-gnu (x86_64) using  EditLine wrapper
+    [root@west228 ~]#   rpm  -qa | grep  mysql
+    mysql-libs-5.1.69-1.el6_4.x86_64
+    mysql-5.1.69-1.el6_4.x86_64
+    mysql-devel-5.1.69-1.el6_4.x86_64
     [root@west228 etc]# ps -ef | grep mysql
     root      3955  3693  0 11:15 pts/0    00:00:00 grep mysql
     [root@west228 etc]# ^C
@@ -16,17 +19,8 @@
     ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (111)
     [root@west228 etc]# 
 
-初始启动 MySQL
-# /etc/rc.d/init.d/mysqld start
-=======
 #初始启动 MySQL
 	/etc/rc.d/init.d/mysqld start
->>>>>>> nothing changed
-
-[root@west228 ~]#   rpm  -qa | grep  mysql
-mysql-libs-5.1.69-1.el6_4.x86_64
-mysql-5.1.69-1.el6_4.x86_64
-mysql-devel-5.1.69-1.el6_4.x86_64
 
 #终止MySQL
 	[root@west228 etc]# mysql --version
