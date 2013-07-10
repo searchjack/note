@@ -11,6 +11,8 @@ nginx启动，重启，关闭命令
 	ps -ef | grep nginx
 在进程列表里 面找master进程，它的编号就是主进程号了。
 步骤2：发送信号
+停止nginx的命令
+	/usr/local/nginx/sbin/nginx -s stop
 从容停止Nginx：
 	kill -QUIT 主进程号
 快速停止Nginx：
