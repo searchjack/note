@@ -1,5 +1,4 @@
 
-
 [root@west228 etc]# mysql --version
   mysql  Ver 14.14 Distrib 5.1.61, for unknown-linux-gnu (x86_64) using  EditLine wrapper
 [root@west228 etc]# ps -ef | grep mysql
