@@ -23,3 +23,8 @@ usful site :
 
 http://snowolf.iteye.com/blog/1539932
 
+http://blog.sina.com.cn/s/blog_5ce87d560100q5tw.html
+
+http://www.cnblogs.com/huangjingzhou/articles/2153405.html
+
+
