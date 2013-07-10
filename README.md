@@ -1,2 +1,3 @@
-This is my personal note.
-           Ok ! done.
+	This is my personal note.
+
+-	Ok ! done.
