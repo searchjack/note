@@ -1,0 +1,5 @@
+﻿# gem install af
+af login
+# cd _dir
+af update appName
+#	https://docs.appfog.com/services/mysql

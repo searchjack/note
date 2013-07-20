@@ -1,0 +1,465 @@
+github 使用：
+1 新建项目
+2 执行页面上的配置命令
+	global setup               *
+	add your public key               #
+		ssh-keygen                # 生成公钥 - 默认全部回车即可
+					  # c:/Users/admin/.ssh/id_rsa	
+	next steps                 *      # 这两项直接执行命令即可
+		mkdir first-proj
+		cd first-proj
+		touch README
+		git add README
+		git commit -m "first commit"
+		git remote add origin git@github.com:searchjack/first-proj.git
+		git push -u origin master
+-- 取回服务器信息
+git fetch origin
+git rebase origin/master
+git push
+-- 冲突
+git fetch origin
+git rebase origin/master
+vim xxx.file
+git add .
+git rebase --continue
+git push
+
+
+-- 删除文件后，取回
+git checkout -f HEAD
+find .git/objects/ -type f
+git show -s --pretty=raw <hash>
+-- 查看对象类型
+git cat-file -t <hash>
+-- tag     commit tag 标签
+git tag v1.0                                                      -- 这是指针类型的 tag
+cat .git/refs/tags/v1.0
+git tag -a milestone1.0 -m "This is the first stable version"     -- 对象型的 tag-- 从 tag 提供源码，打包  < proj 为项目
+git archive --format=tar --prefix=proj/ v1.0 | gzip > /tmp/proj1.0.tar.gz
+-- 从 tag 检出
+git checkout v1.0  # .git/refs/tags/v1.0
+-- 分支 master | testing
+- 合并分支
+git branch
+git checkout master
+git merge testing- 删除分支
+git branch -D testing
+- 合并分支 冲突
+-- rename
+- 事先在磁盘上 rename a.c to b.c
+git rm a.c
+git add b.c
+git status
+--
+git mv a.c b.c
+git status
+--
+git add x.c -s  # -s means split
+git diff --color-words x.c
+--
+git checkout -- dirName/
+git checkout -- xx.c    # -- 表示在当前分支检出修改
+-- unstage one file/directory - 在 stage index 进行
+git reset HEAD xxx.c
+-- 修改最近一个commit，将本commit附加到最近的commit
+git commit --amend -m "update info" -- 可以在这里修改commit信息
+git commit --amend -m "changed info"
+-- git diff --staged
+git log
+git checkout <SHA> -- xxx.c
+git status
+git diff --staged
+git reset HEAD xxx.c   # reset xxx.c from SHA - HEAD
+git checkout -- xxx.cn
+-- revert
+git log  # get the latest commit SHA
+git revert <SHA>   # pop up a commit message
+git log
+-- git reset --soft    # does not change staging index or working directory
+git log # get SHA
+cat .git/HEAD # in master branch
+cat .git/refs/heads/master
+git reset --soft <SHA>    # the history <SHA>
+cat .git/refs/heads/master
+- something changed
+git status
+git diff --staged
+-
+get reset --soft <SHA>   # get back to the latest history
+git status
+-- git reset --mixed
+git reset --mixed <SHA>   # changes staging index to match repository,
+						  # does not change workiing directory.
+-- reset --hard           # changes staging index and working directory to
+                          # match repository.
+git log
+git reset --hard <SHA>    #
+git log
+git status # nothing to commit
+git reset --hard <SHA>    # 回到丢失的 commit, 如果还能记住或找到之前的 SHA,在 repository 中并没有将其删除
+-- git clean    # remove files which untracked, so it would not exist in working space,stage index and repository
+git status   # some file is untracked
+git clean
+git clean -n
+git add aFileToDelete.c
+git clean -f
+git status
+-- ignore file
+project/.gitignore
+·very basic regular expressions
+  * ? [aeiou] [0-9]
+·negate expressions with!
+  *.php
+  !index.php
+·ignore all files in a directory with trailing slah
+  assets/videos/
+·comment lines gegin with #, blank lines are skipped
+
+- in the working directory
+vim .gitignore
+	name.txt
+	*.cc
+	# Comment
+	tmpfile.txt
+	.SD_Store
+	*.zip
+	*.gz
+	log/*.log
+	log/*.log.[0-9]
+	assets/photoshop/
+	assets/videos
+	!assets/videos/tour_*.mp4
+	# question: would log/archive/access.log be ignored? No.
+
+http://github.com/github/gitignore
+
+- globally ignore files
+vim .gitignore_blobal
+	.DS_Store
+	.Trashes
+	.Spotlight-v100
+git config --global core.excludesfile ...\.gitignore_global     # 在git 的根目录执行 / 其目录下有 .gitconfig 文件
+cat .gitconfig
+
+- ignore tracking files
+# add a.c to repository, "git add a.c | git commit"
+# remove it, and keep it in working space
+git rm --cached a.c
+git add .gitignore
+git commit -m "remove a.c from index"
+git status
+-- Tracking empty directories
+touch .gitkeep   # 在空目录下建空文件
+git status
+git add <./...>
+git commit -m "add 'empty' directory with .gitkeep file in it"
+-- navigating the commit tree
+-- refrencing commits
+git help ls-tree
+git ls-tree HEAD
+git ls-tree master
+git ls-tree master assets/
+git ls-tree master^ assets/   # parent commit
+git ls-tree <SHA>
+git log --oneline
+git log --oneloine -3
+git log --since="2012-10-23"
+git log --until="2012-10-23"
+git log --since="3 weeks ago" --until="2 days ago"
+git log --since=3.weeks --until=2.days
+git log --author="Kevin"
+git log 332983..acf8750 --oneline  # two SHA
+git log c4913e.. index.html        # view the log of a file up to now
+git log -p c4913e.. index.html     # show changes
+git log --start --summary
+git log --format=oneline
+git log --format=short
+git log --format=full
+git log --format=midum
+git log --format=raw
+git log --format=email
+git log --graph
+git log --oneline --graph --all --decorate
+pwd
+git log --oneline
+git show SHA
+-
+git show --format=oneline HEAD
+git show --format=oneline HEAD^
+git show --format=oneline HEAD^^
+git show --format=oneline HEAD~3
+-
+git help show
+git show SHA
+git diff       # return the changes that between working directory and stage index
+git diff --staged
+git diff --cached
+git log --oneline
+git diff SHA   # SHA reference to commit
+               # return differences between the directory at that point 
+			   # in time and my current working directory.
+git diff SHA tours.html          # show the changes of one file
+git diff SHA..SHA
+git diff SHA..SHA tours.html     # show the changes of one file
+git diff SHA..HEAD
+git diff SHA..HEAD^^
+git diff --stat --summary SHA..HEAD
+git diff -b SHA..HEAD                       # 等效于下一条命令
+git diff --ignore-space-change SHA..HEAD
+git diff --ignore-all-space SHA..HEAD
+git diff -w SHA..HEAD                        # 等效于上一条命令
+-- create branch
+git branch
+cat .git/HEAD
+ls -la .git/refs/heads
+cat .git/resfs/heads/master
+git log --oneline
+git branch new_feature
+git branch
+cat .git/HEAD
+git checkout new_feature
+git branch
+cat .git/HEAD
+# change a file
+git status
+git commit -am "message"
+git log --oneline
+git checkout master
+git log --oneline
+- git checkout new_feature
+git show HEAD
+it log --graph --oneline --decorate --all
+-- 
+.bash_profile
+	export PS1='\W$(__git_ps1 "(%s)") > '
+source ~/.bashprofile   # execute the script
+-- merging code  # merge different branchs in
+- merge the changes into the master branch
+git branch
+git diff master..seo_title
+git checkout master
+git merge seo_title # fast forward
+git log
+git diff master..seo_title
+git branch --merged
+#
+-- use fast-forward merge
+git log seo_title --oneline -3
+git log master --oneline -3
+git merge --no-ff branch   # no-ff option forces Git to create a merge commit anyway
+git merge --ff-only branch # only do the fast-forward merge, otherwise abort
+-- merging conflicts
+git checkout seo_title # update the a.file
+git commit -am "update the a.file"
+git checkout master # update the a.file too
+git commit -am "update the a.file too"
+git merge seo_title # CONFLICT
+git merge --abort
+-
+git status
+git log --oneline
+git merge seo_title # abort merge
+
+# resolve the conflicts manually
+# use a merge tool
+git status
+git add a.file
+git status
+git commit
+gti status
+git log --oneline -4
+git branch --merged # --> seo_title
+-
+git log --graph --oneline --all --decorate
+-
+# git mergetool --tool=xxx
+git mergetool
+-- reduce merge conflicts
+# keep lines short
+# keep commits small and focused
+# beware stray edits to whitespace
+  - spaces,tabs,line returns
+# merge often
+# track changes to master
+-- saving changes in the stash
+# Let's try making a change,and then we can store it in the stash
+git checkout shorten_title
+git branch --merged
+# change b.file
+git status
+git checkout master # error
+					# commit changes or stash them
+git stash save "changed b.file"git status # nothing to commit
+git log --oneline -3
+-
+git stash list # stash@{0}:
+git checkout master
+git stash list # stash@{0}: 
+			   # it is available
+git stash show stash@{0}
+git stash show -p stash@{0}
+git stash pop   # - put stash in the work directory  - remove it from the stash
+git stash apply # /                                  - keep the copy in the stash
+git stash pop stash@{0}
+git stash list
+git stash save "save stash again"
+git checkout shorten_title
+git status
+git stash list
+git stash apply
+git stash list
+-- deleting stashed changes
+git stash list
+git stash drop stash@{0}  #
+git stash list
+-
+# change c.file
+git status
+git stash save "change c.file"
+git stash list
+git status
+# change d.file
+git status
+git stash save "change d.file"
+git stash list
+git stash clear # clear all of the stahs
+git stash list
+-- using local and remote respositories
+# pull
+# fetch
+git remote
+git remote add <name> <url>
+git remote
+git remote -v
+cat .git/config
+git remote rm origin
+cat .git/config
+-
+# git push -u origin # push to remote
+git branch
+git push -u origin master
+-
+cat .git/config
+ls -la .git/refs/remotes
+ls -la .git/refs/remotes/origin
+cat .git/refs/remotes/origin/master
+git branch
+git branch -r # remote
+git branch -a # all
+-
+git clone https://github.com/... lynda_version
+# tracking remote branches
+-- fetching changes from remote
+git branch
+git branch -r
+git fetch # It is'n  hrmful
+git log --oneline -5 origin/master
+git branch
+git branch -r
+git log --oneline -5 master
+-- merging in fetched changes
+git branch -a
+git diff origin/master..master
+git merge origin/master
+git log --oneline -3 master
+# 
+# git pull = git fetch + git merge
+
+-- checking out remote branches
+git branch
+git branch -r
+git branch non_tracking origin/non_tracking
+cat .git/config
+git branch -d non_tracking # -d : delete
+gir branch -r
+git checkout -b non_tracking origin/non_tracking
+git branch
+git checkout master
+git branch
+-- pushing to an updated remote branch
+# 本地与远程在某一个commit 不一致
+# fetch - merge - push
+git branch -a
+git push origin :non_tracking # delete一个远程分支，本地仍然保存有这个分支
+git branch -r
+git push origin non_tracking:non_tracking   # non_tracking --> non_tracking  =>  local branch --> remote branch
+											# push to origin my local branch non_tracking, to remote branch
+											# :non_tracking   => it means to delete the remote branch 'non_tracking'
+git push oring non_tracking
+git push oring --delete non_tracking # delete a branch from local and remote
+git branch -r
+#
+-- my work
+git checkout master
+git fetch
+git merge origin/master
+git checkout -b feedback_form
+git add feedback.html
+git commit -m "Add customer feedback form"
+git fetch
+git push -u origin feedback_form
+-- a collaboration workflow
+the coworker
+git checkout master
+git fetch
+git merge origin/master
+git checkout -b feedbakc_form origin/feedback_form
+git log
+git show 8387f0
+git commit -am "Add tour selector to feedback form"
+git fetch # make sure there is no new changes come in
+git push
+-- my work
+git fetch
+git log -p feedback_form..origin/feedback_form
+git merge origin/feedback_form
+git checkout master
+git fetch
+git merge origin/master
+git merge feedback_form
+git push
+-- setting up aliases form common commands
+git config --global alias.st "status"  # ~/.config
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.df diff
+git config --global alias.dfs "diff --staged"
+git config --global alias.logg "log --graph --decorate --oneline --abbrev-commit --all"
+git logg  #
+--
+graphical user interface for mac
+	gitX
+	gitHub
+	tower
+	smartGit
+	gitbox
+
+graphical user interface for windows
+	tortoiseGit
+	gitHub
+	git extensions
+	smartGit
+git hosting companies
+	gitHub	gitHub.org
+	bitbucket bitbucket.org
+	gitorious gitorious.org
+git self-hosting
+	gitosis
+	gitolite
+
+
+<================= finished   :  Lynda.com : git essential training
+git help <log>
+
+
+SVN
+sc create
+svnadmin
+svn 地址: svn://localhost/proj_name
+权限：项目仓库/conf/svnserve.conf
+	anon-access = none
+	auth-access = write
+	password-db = passwd
+	authz-db = authz

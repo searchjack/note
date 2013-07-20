@@ -1,0 +1,155 @@
+Red hat linux
+
+# 添加用户
+useradd userName
+# 设密码
+passwd userName
+# 删除用户
+userdel userName
+userdel -r userName # 删除用户以及用户主目录
+# 启动时修改错误配置
+选择启动项时按 e 键
+选一个启动项 按下 e
+grep "keyword" aaa.txt # 查找文件中包含此关键字
+grep -n "keyword" aaa.txt # 查找文件中包含此关键字
+grep "keyword" aaa.txt /home/ # 查找文件中包含此关键字
+grep "keyword" aaa.txt /home/* # 查找文件中包含此关键字
+find / -name xxx.txt # 从 / 目录开始查找 xxx.txt
+ls -ahl # 文件所有者
+groupadd groupName # 添加用户组
+vi /etc/group #
+cat /etc/group | more
+useradd -g groupName userName
+cat /etc/passwd
+usermod -g groupName userName # 改变用户所在组
+mount /mnt/cdrom/ # 挂载光区
+umount /mnt/cdrom/ # 卸载光区
+/etc/profile  # 环境配置文件
+tar -zxvf xxx.tar.gz # 安装
+fdisk -l # 查看分区
+	/dev/sda1
+	设备  设备名 -> scaci-disk-a:第一个磁盘-1:第一个分区
+df /boot/
+mount /dev/sad1 /test/ # 将前一个设备挂载到test目录
+umount /test/
+df # 分区使用情况
+df -h
+
+/boot  分区 100M
+swap 交换分区 内存的2倍，不大于256M
+/    根分区  尽可能大
+samba  # 与win 共享文件
+linux与unix shell编程指南
+evn  # 显示系统环境变量
+chsh -s /bin/csh    # 选择shell解释器
+man mkdir #
+history
+history 5    # 查看最近使用的5个命令
+!5           # 此项说明执行历史编号为5的命令
+!ls		     # 此项说明执行最后一次以 ls 开头的命令
+tcp/ip 详解
+# 网络环境设置
+setup
+ifconfig
+# /etc/sysconfig/network script/ifcfg eth0
+/etc/rc.d/init.d/network restart # 使网络配置生效
+ifconfig eth0 192.168.88.88 # 临时有效
+ifconfig
+rpm -qa   # 查询已安装的 rpm 包
+rpm -q mysql #
+rpm -i RPM包完整路径
+rpm -ivh RPM包 # i:install v:verbose h:hash
+rpm -e jdk # 删除rpm包
+rpm -U RPM包全路径
+rpm -e --nodeps samba # 强制卸载，忽略依懒关系
+# 安装 samba
+rpm -ivh samba-common-
+rpm -ivh samba-client-
+rpm -ivh samba-x.x.x-
+useradd youyou
+passwd -> youyou
+# 为youyou设置samba 密码
+cat /etc/passwd | mksmbpasswd sh > /etc/sambapasswd
+smbpasswd youyou
+
+service smb start
+# service smb stop
+# service smb restart
+# win 下访问 \\ip 即可读写
+# /etc/crontab    任务调度
+crontab -e
+# 分钟(0-59) 小时(0-23) 日期(day of month,1-31) 月(0-12) 星期(0-6)
+* * * * * date >> /date.log # 表示每隔一分钟执行一次这条命令
+# 调用一个 shell
+vi /root/task.sh
+chmod 744 /root/task.sh  # 使文件有可执行权限
+crontab -e
+	* * * * * /root/task.sh
+crontab -r   # 清除所有任务
+crontab -l   # 列除所有任务列表
+# 进程： 正在运行的程序
+# 线程：
+	1、轻量级的进程
+	2、进程有独立的地址空间，线程没有
+	3、纯种不能独立存在，它是由进程创建
+	4、相对讲，线程耗费的cpu和内存小于进程
+#
+ps -a # 显示当前终端所有进程信息
+ps -u # 以用户的格式显示进程信息
+ps -x # 显示后台进程运行的参数
+ps -aux # 
+kill pid # 杀死进程
+kill -9 pid # 强制杀死进程
+killall pid # 杀死进程及子进程
+top        # 动态监控进程 --> [百度]
+load average: 0.02, 0.12, 0.07  # 总和除以3，结果大于0.6 表明系统负载较重
+top -d 10  # 10 秒刷新一次
+# 输入 u ， 再输入 root,查看root用户的进程
+cal 4 2002
+cal 2002
+netstat   # 显示网络统计信息
+netstat -anp  # -p: 显示进程号
+tracerroute   #
+# mysql 安装
+tar -zxvf file.tar.gz  # 安装
+groupadd mysql
+useradd -g mysql mysql
+# 进入 mysql 文件夹目录
+scripts/mysql_install_db --user=mysql  # 初始化数据库
+chown -R root .       # 将mysql目录下所有文件及目录改为root用户所有
+chown -R mysql data   #修改data文件夹所有者,使mysql可以写入数据
+chgrp -R mysql .      #改变用户组(把文件所属用户组改为mysql
+# 启动 mysql
+bin/mysqld_safe --user=mysql &
+/userName/.bash_profile  # 用户环境变量
+mysqldump -u root -pPassWord 数据库名 > data.bak  #备份数据库
+mysql -u root -pPassWord 数据库名 < data.bak  # 恢复
+
+find /home -name abc  # 在目录下按文件名查找文件
+find /home -amin -10   十分钟内存取过的文件/目录
+find /home -atime -10  十小时内存取过的
+find /home -cmin -10   十分钟内更改过的
+find /home -ctime +10  十小时前更改过的
+find /home -size +10k  查找目录下大小为 10 的文件
+
+ln -s 源 目标   # 建立链接
+cp -r aa/ bb/  # -r 递归，
+rm -rf xxx/
+
+zip aaa.zip
+zip aa.zip 文件名1,文件名2 # 将2个文件压缩到 aa.zip
+unzip zz.zip
+unzip aa.zip -x file.c # 解压除了 file.c 的文件
+
+
+# JAVA 网络编程
+
+
+
+
+# .bashrc 文件在用户登陆后执行，可存放用户启动项
+
+
+jspghost.exe
+
+ssh secure shell --下载
