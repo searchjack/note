@@ -1,4 +1,6 @@
 # deb是debian linus的安装格式，跟red hat的rpm非常相似，最基本的安装命令是：dpkg -i file.deb
+> from: http://blog.csdn.net/kevinhg/article/details/5934462
+
 
 > dpkg 是Debian Package的简写，是为Debian 专门开发的套件管理系统，方便软件的安装、更新及移除。所有源自Debian的Linux发行版都使用dpkg，例如Ubuntu、Knoppix 等。
 <li> 以下是一些 Dpkg 的普通用法：
