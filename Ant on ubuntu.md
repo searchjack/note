@@ -1,7 +1,7 @@
 #一 手动安装(推荐)
 <li> 1. 下载ant
 
-<li> 2. 解压下载下来的.tar.gz文件： tar -xf apache-ant-1.8.2-bin.tar.gz
+<li> 2. 解压下载下来的.tar.gz文件： ```tar -zxvf apache-ant-x.x.x-bin.tar.gz```
 
 	在win 下载 apache-ant-*.zip  解压即可
 <li> 3. 将解压出来的文件移动到/opt/下：sudo mv apache-ant-1.8.2 /opt/   ```(存放位置看个人习惯)```
