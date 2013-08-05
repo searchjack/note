@@ -1,4 +1,3 @@
-
 - from: http://blog.csdn.net/redhat7890/article/details/5131803
 #生成 key
 
@@ -18,4 +17,6 @@ The key fingerprint is:
 
 
 # 最后得到了两个文件：id_rsa和id_rsa.pub
-在github上添加ssh密钥，这要添加的是“id_rsa.pub”里面的公钥。
+
+- 在github上添加ssh密钥，这要添加的是“id_rsa.pub”里面的公钥。
+> https://github.com/settings/ssh
