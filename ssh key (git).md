@@ -1,4 +1,5 @@
 - from: http://blog.csdn.net/redhat7890/article/details/5131803
+
 #生成 key
 
 >    ssh-keygen -t rsa
