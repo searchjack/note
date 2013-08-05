@@ -1,10 +1,10 @@
 - from: http://blog.csdn.net/redhat7890/article/details/5131803
 #生成 key
 
-    ssh-keygen -t rsa
-> 
-$ ssh-keygen -t rsa
+>    ssh-keygen -t rsa
 
+
+    $ ssh-keygen -t rsa
     Generating public/private rsa key pair.
     Enter file in which to save the key (/c/Users/searchjack/.ssh/id_rsa):
     Enter passphrase (empty for no passphrase):
@@ -19,6 +19,6 @@ $ ssh-keygen -t rsa
 
 # 最后得到了两个文件：id_rsa和id_rsa.pub
 
-- 将 ```“id_rsa.pub”``` 里面的内容添加到 :
+- 将 ```id_rsa.pub``` 里面的内容添加到 :
 
-    https://github.com/settings/ssh
+>    https://github.com/settings/ssh
