@@ -6,3 +6,4 @@
 
 <li> get ```install_flash_player_11_linux.x86_64.tar.gz```
   from ```http://get.adobe.com/flashplayer/otherversions/```
+> 
