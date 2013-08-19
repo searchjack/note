@@ -9,7 +9,7 @@
 > 
 
 
-# 安装ibus 五笔输入法
+# ibus 五笔输入法
 ```sudo apt-get install ibus-table-wubi```
 
 
