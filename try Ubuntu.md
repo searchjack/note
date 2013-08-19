@@ -62,10 +62,10 @@
 来自 ubuntu 的字体下载提示, http://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93
 
 ```可用字体```
-
-	sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
-	sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
-	sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
+>
+sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
+sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
+sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
 
 
 - 手动修改字体：  
