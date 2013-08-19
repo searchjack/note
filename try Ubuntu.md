@@ -56,6 +56,7 @@
 
 
 
+
 ＃ 设置中文字体
 
 来自 ubuntu 的字体下载提示, http://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93
@@ -63,10 +64,9 @@
 ```可用字体```
 
 	sudo apt-get install ttf-wqy-microhei  #文泉驿-微米黑
-	
 	sudo apt-get install ttf-wqy-zenhei  #文泉驿-正黑
-	
 	sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
+
 
 - 手动修改字体：  
 from:  http://single9.net/2012/11/ubuntu-12-04-%E4%BF%AE%E6%94%B9%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E9%A0%90%E8%A8%AD%E4%B8%AD%E6%96%87%E5%AD%97%E9%AB%94%E3%80%82/
