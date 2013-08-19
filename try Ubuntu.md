@@ -16,7 +16,7 @@
 
 
 # ibus 五笔输入法
-- from: http://www.blogjava.net/leisure/archive/2011/11/06/358567.html
+- via: [blogjava](http://www.blogjava.net/leisure/archive/2011/11/06/358567.html)
 启动 ibus 输入法 ```Keyboard Input Methods```
 
 ```sudo apt-get install ibus-table-wubi```
@@ -29,8 +29,8 @@
 
 
 # jdk 1.6
-- download:  ```http://www.oracle.com/technetwork/java/javase/archive-139210.html```
-迅雷下载: ```http://download.oracle.com/otn-pub/java/jdk/6u38-b05/jdk-6u38-linux-x64.bin```
+- download:  [java](http://www.oracle.com/technetwork/java/javase/archive-139210.html)
+迅雷下载: [jdk-6u38-linux-x64.bin](http://download.oracle.com/otn-pub/java/jdk/6u38-b05/jdk-6u38-linux-x64.bin)
 
 - 更改文件权限为可执行 ```chmod u+x jdk-6u45-linux-x64.bin``` or
 ```chmod 701 jdk-6u45-linux-x64.bin```
@@ -59,7 +59,7 @@
 
 ＃ 设置中文字体
 
-来自 ubuntu 的字体下载提示, http://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93
+来自 ubuntu 的字体下载提示, [font](http://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93)
 
 ```可用字体```
 >
@@ -69,7 +69,7 @@ sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
 
 
 - 手动修改字体：  
-from:  http://single9.net/2012/11/ubuntu-12-04-%E4%BF%AE%E6%94%B9%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E9%A0%90%E8%A8%AD%E4%B8%AD%E6%96%87%E5%AD%97%E9%AB%94%E3%80%82/
+via: [install fonts](http://single9.net/2012/11/ubuntu-12-04-%E4%BF%AE%E6%94%B9%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E9%A0%90%E8%A8%AD%E4%B8%AD%E6%96%87%E5%AD%97%E9%AB%94%E3%80%82/)
 
 	sudo gedit /etc/fonts/conf.d/65-nonlatin.conf
 	
@@ -83,3 +83,8 @@ from:  http://single9.net/2012/11/ubuntu-12-04-%E4%BF%AE%E6%94%B9%E8%8B%B1%E6%96
 
 最後執行 ```$ sudo fc-cache -v```
 清掉字体缓存，到這邊已經大功告成，你可以嘗試把這個瀏覽器關掉，然後在一次打開，你會發現中文果然變得養眼多了。
+
+
+
+
+
