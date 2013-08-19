@@ -24,7 +24,7 @@
 
 - 添加环境变量
 
-	```sudo gedit /etc/profile```  在profile文件最后添加
+```sudo gedit /etc/profile```  在profile文件最后添加
 
 	\#set java environment
 	
