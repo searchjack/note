@@ -16,7 +16,12 @@
 
 
 # ibus 五笔输入法
+- from: http://www.blogjava.net/leisure/archive/2011/11/06/358567.html
+启动 ibus 输入法 ```Keyboard Input Methods```
+
 ```sudo apt-get install ibus-table-wubi```
+
+
 
 
 
