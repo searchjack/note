@@ -12,18 +12,17 @@
 ```sudo apt-get install ibus-table-wubi```
 
 # jdk 1.6
-download:  ```http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html```
+download:  ```http://www.oracle.com/technetwork/java/javase/archive-139210.html```
+迅雷下载: ```http://download.oracle.com/otn-pub/java/jdk/6u38-b05/jdk-6u38-linux-x64.bin```
 
 更改文件权限为可执行 ```chmod u+x jdk-6u14-linux-i586.bin``` or
 ```chmod 701 jdk-6u14-linux-i586.bin```
 
->
-```sudo ./jdk-6u14-linux-i586.bin```
+- ```sudo ./jdk-6u14-linux-i586.bin```
 
-<li> 添加环境变量
+- 添加环境变量
 
 ```sudo gedit /etc/profile```
-
 在profile文件最后添加
 
 	#set java environment
