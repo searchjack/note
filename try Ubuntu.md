@@ -50,6 +50,6 @@
 	export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 
 
-- 重启后(ctrl+ alt+ backspace)，测试  java -version
+- 重启后，测试  java -version
 
 
