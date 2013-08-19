@@ -82,5 +82,4 @@ from:  http://single9.net/2012/11/ubuntu-12-04-%E4%BF%AE%E6%94%B9%E8%8B%B1%E6%96
 	```<family>WenQuanYi Micro Hei Mono</family>```
 
 最後執行 ```$ sudo fc-cache -v```
-
 清掉字体缓存，到這邊已經大功告成，你可以嘗試把這個瀏覽器關掉，然後在一次打開，你會發現中文果然變得養眼多了。
