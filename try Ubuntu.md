@@ -4,13 +4,21 @@
 
 > install flash player on ubuntu
 
+- from:  http://www.linuxidc.com/Linux/2012-11/73629p2.htm
+
 <li> get ```install_flash_player_11_linux.x86_64.tar.gz```
   from ```http://get.adobe.com/flashplayer/otherversions/```
-> 
+>
+
+sudo cp libflashplayer.so /usr/lib/mozilla/plugins/
+cp -r ./usr/* /usr/
+
 
 
 # ibus 五笔输入法
 ```sudo apt-get install ibus-table-wubi```
+
+
 
 
 # jdk 1.6
