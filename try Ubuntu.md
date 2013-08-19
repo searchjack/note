@@ -30,10 +30,12 @@
 - download:  ```http://www.oracle.com/technetwork/java/javase/archive-139210.html```
 迅雷下载: ```http://download.oracle.com/otn-pub/java/jdk/6u38-b05/jdk-6u38-linux-x64.bin```
 
-- 更改文件权限为可执行 ```chmod u+x jdk-6u14-linux-i586.bin``` or
-```chmod 701 jdk-6u14-linux-i586.bin```
+- 更改文件权限为可执行 ```chmod u+x jdk-6u45-linux-x64.bin``` or
+```chmod 701 jdk-6u45-linux-x64.bin```
 
-- ```sudo ./jdk-6u14-linux-i586.bin```
+
+- ```sudo ./jdk-6u45-linux-x64.bin```  // 将 .bin 文件放到安装目标目录
+
 
 - 添加环境变量
 
@@ -41,12 +43,13 @@
 
 	#set java environment
 	
-	JAVA_HOME=/home/username/develop/jdk1.6.0_14
-	export JRE_HOME=/home/username/develop/jdk1.6.0_14/jre
+	JAVA_HOME=/home/searchjack/develop/jdk1.6.0_45
+	export JRE_HOME=/home/searchjack/develop/jdk1.6.0_45/jre
 	
 	export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
-	export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH 
+	export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 
-- 测试  java -version
+
+- 重启后(ctrl+ alt+ backspace)，测试  java -version
 
 
