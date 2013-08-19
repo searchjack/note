@@ -21,7 +21,13 @@
 
 ```sudo apt-get install ibus-table-wubi```
 
+Ubuntu 的默认输入法是 ibus，但是发现系统启动时它不会自动启动。
 
+Google 的说法是：Ubuntu 系统安装后虽然自带了 ibus 输入法，但在英语环境下默认不启动。
+
+>
+要开机启动，其实也很简单，只要在```Language Support```
+里选择```Keyboard input method system```为```ibus```就可以了。
 
 
 
