@@ -26,8 +26,8 @@
 
 - ```sudo gedit /etc/profile```
 在profile文件最后添加
->
-	#set java environment
+
+	\#set java environment
 	
 	JAVA_HOME=/home/username/develop/jdk1.6.0_14
 	export JRE_HOME=/home/username/develop/jdk1.6.0_14/jre
