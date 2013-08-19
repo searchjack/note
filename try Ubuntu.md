@@ -56,8 +56,8 @@
 
 
 
-＃ 设置中文字体
-来自 ubuntu 的字体下载提示, [font](http://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93)
+#设置中文字体
+- 来自 ubuntu 的字体下载提示, [font](http://wiki.ubuntu.org.cn/%E5%AD%97%E4%BD%93)
 
 ```可用字体```
 
@@ -67,9 +67,9 @@ sudo apt-get install xfonts-wqy #文泉驿-点阵宋体
 
 
 - 手动修改字体：
+via: [install fonts](http://single9.net/2012/11/ubuntu-12-04-%E4%BF%AE%E6%94%B9%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2%E9%A0%90%E8%A8%AD%E4%B8%AD%E6%96%87%E5%AD%97%E9%AB%94%E3%80%82/)
 
-
-sudo gedit /etc/fonts/conf.d/65-nonlatin.conf
+> sudo gedit /etc/fonts/conf.d/65-nonlatin.conf
 	
 找到 ```sans-serif``` 在<prefer>後加上新的一行
 
@@ -80,8 +80,3 @@ sudo gedit /etc/fonts/conf.d/65-nonlatin.conf
 ```<family>WenQuanYi Micro Hei Mono</family>```
 
 最後執行 ```$ sudo fc-cache -v``` 清掉字体缓存。
-
-
-
-
-
