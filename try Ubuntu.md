@@ -4,7 +4,7 @@
 
 > install flash player on ubuntu
 
-- from:  http://www.linuxidc.com/Linux/2012-11/73629p2.htm
+- via:  [linux公社](http://www.linuxidc.com/Linux/2012-11/73629p2.htm)
 
 <li> get ```install_flash_player_11_linux.x86_64.tar.gz```
   from ```http://get.adobe.com/flashplayer/otherversions/```
