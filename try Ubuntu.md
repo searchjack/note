@@ -9,9 +9,9 @@
 <li> get ```install_flash_player_11_linux.x86_64.tar.gz```
   from ```http://get.adobe.com/flashplayer/otherversions/```
 >
-
-sudo cp libflashplayer.so /usr/lib/mozilla/plugins/
-cp -r ./usr/* /usr/
+	
+	sudo cp libflashplayer.so /usr/lib/mozilla/plugins/
+	cp -r ./usr/* /usr/
 
 
 
