@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #初始启动 MySQL
 	/etc/rc.d/init.d/mysqld start
 =======
@@ -19,7 +19,7 @@
 	mysql-libs-5.1.69-1.el6_4.x86_64
 	mysql-5.1.69-1.el6_4.x86_64
 	mysql-devel-5.1.69-1.el6_4.x86_64
->>>>>>> rm Java.md R.md
+	rm Java.md R.md
 
 #终止MySQL
 	[root@west228 etc]# mysql --version
