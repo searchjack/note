@@ -1,4 +1,4 @@
-＃ install mysql on linux
+#install mysql on linux
 via: [install mysql](http://www.2cto.com/os/201205/132796.html)
 
 	sudo apt-get install mysql-server mysql-client #中途会让你输入一次root用户密码
