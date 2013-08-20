@@ -5,6 +5,7 @@ via: [install mysql](http://www.2cto.com/os/201205/132796.html)
 
 >
 sudo start mysql #手动的话这样启动
+
 sudo stop mysql #手动停止
 
 
